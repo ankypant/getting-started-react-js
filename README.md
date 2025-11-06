@@ -2,74 +2,42 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Getting Started: React for Angular Developers
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Video Tutorials
 
-## React Compiler
+- **Getting Started**: [React for Angular Developers](https://youtu.be/QIVTmKT84kI?si=u53PFz1sKhrMcVAP)
+- **Basic Tutorial**: [React Basics](https://www.youtube.com/watch?v=SqcY0GlETPk)
+- **useEffect() Hook**: [Understanding useEffect](https://www.youtube.com/watch?v=-4XpG5_Lj_o)
+- **Data Fetching**: [Using TanStack Query (React Query)](https://www.youtube.com/watch?v=MBlZ8Wzkbi4)
+- **Forms in React**: [React Forms Tutorial](https://www.youtube.com/watch?v=falMPMOPMAk)
+- **Routing**: [React Router Tutorial](https://www.youtube.com/watch?v=oTIJunBa6MA)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Key Libraries & Resources
 
-## Expanding the ESLint configuration
+#### UI Components
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Material UI - npm package](https://www.npmjs.com/package/@mui/material)
+- [Material UI - All Components](https://mui.com/material-ui/all-components/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+#### Forms & Validation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [React Hook Form](https://www.npmjs.com/package/react-hook-form) - Performant, flexible forms with easy validation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+#### State Management
+
+- **Reactivity in React**: Use `useState` hook for local component state and track form data changes
+- **Redux**: Global state management (to be explored)
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
-
-# Getting Started with React
