@@ -4,7 +4,10 @@ import { Button, Card, Flex } from '@backstage/ui';
 import { useEffect, useState } from 'react';
 
 import CircularProgress from '@mui/material/CircularProgress';
-import { fetchPosts, type PostAPIResponse } from '../../apis/post.api';
+import {
+  fetchPostByPageNumber,
+  type PostAPIResponse,
+} from '../../apis/post.api';
 
 export const Post = () => {
   const [page, setPage] = useState(1);
@@ -16,7 +19,7 @@ export const Post = () => {
       setIsLoading(true);
 
       const timeout = setTimeout(async () => {
-        const data = await fetchPosts(page);
+        const data = await fetchPostByPageNumber(page);
         setPostData(data);
         setIsLoading(false);
       }, 1000);

@@ -5,9 +5,16 @@ export interface PostAPIResponse {
   body: string;
 }
 
-export async function fetchPosts(page: number): Promise<PostAPIResponse> {
+export async function fetchPostByPageNumber(
+  page: number
+): Promise<PostAPIResponse> {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${page}`
   );
+  return await response.json();
+}
+
+export async function fetchPosts(): Promise<PostAPIResponse[]> {
+  const response = await fetch(`https://jsonplaceholder.typicode.com/posts`);
   return await response.json();
 }
