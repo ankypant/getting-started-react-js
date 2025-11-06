@@ -1,0 +1,25 @@
+.counter-card {
+  margin-bottom: 1rem;
+}
+
+.counter-card-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.counter-value {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #555;
+}
+
+.reset-button {
+  background-color: #f31a1a;
+  color: #fff;
+  border: none;
+}
+
+.reset-button:hover {
+  background-color: #da1818;
+}
