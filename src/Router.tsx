@@ -34,10 +34,12 @@ export const AppRoutes = createBrowserRouter([
   {
     path: '/posts',
     element: <PostsPage />,
-  },
-  {
-    path: '/posts/:id',
-    element: <PostByNumberPage />,
+    children: [
+      {
+        path: ':id',
+        element: <PostByNumberPage />,
+      },
+    ],
   },
   {
     path: '/users',
