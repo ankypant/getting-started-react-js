@@ -1,31 +1,31 @@
-import { fetchToDos, type ToDoAPIResponse } from '../../apis/todo.api';
+import { fetchTodos, type TodoAPIResponse } from '../../apis/todo.api';
 import {
   createAsyncThunk,
   createSlice,
   type PayloadAction,
 } from '@reduxjs/toolkit';
 
-interface ToDoState {
-  data: ToDoAPIResponse[];
+interface TodosState {
+  data: TodoAPIResponse[];
   status: 'loading' | 'success' | 'error';
 }
 
-const initialState: ToDoState = {
+const initialState: TodosState = {
   data: [],
   status: 'loading',
 };
 
-const toDosSlice = createSlice({
-  name: 'toDos',
+const todosSlice = createSlice({
+  name: 'todos',
   initialState,
   reducers: {
-    toggleToDo: (state, action: PayloadAction<number>) => {
+    toggleTodo: (state, action: PayloadAction<number>) => {
       return {
         ...state,
-        data: state.data.map((toDo) =>
-          toDo.id === action.payload
-            ? { ...toDo, completed: !toDo.completed }
-            : toDo
+        data: state.data.map((todo) =>
+          todo.id === action.payload
+            ? { ...todo, completed: !todo.completed }
+            : todo
         ),
       };
     },
@@ -45,6 +45,12 @@ const toDosSlice = createSlice({
           data: action.payload,
           status: 'success',
         };
+      })
+      .addCase(todosFetchAsync.rejected, () => {
+        return {
+          data: [],
+          status: 'error',
+        };
       });
   },
 });
@@ -54,14 +60,14 @@ const toDosSlice = createSlice({
 // It returns a promise that resolves to the data
 // and can be used to dispatch actions to the store
 export const todosFetchAsync = createAsyncThunk(
-  'toDos/fetchToDosAsync',
+  'todos/fetchTodosAsync',
   async () => {
-    return await fetchToDos();
+    return await fetchTodos();
   }
 );
 
 // Export the actions to be used in the components
-export const { toggleToDo } = toDosSlice.actions;
+export const { toggleTodo } = todosSlice.actions;
 
 // Export the reducer to be used in the store
-export default toDosSlice.reducer;
+export default todosSlice.reducer;

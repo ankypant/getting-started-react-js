@@ -6,7 +6,7 @@ import NotFoundPage from './components/not-found/NotFoundPage';
 import { Post } from './components/post/Post';
 import PostByNumberPage from './components/posts/PostByNumberPage';
 import PostsPage from './components/posts/PostsPage';
-import { ToDoPage } from './components/todos/ToDosPage';
+import { TodosPage } from './components/todos/TodosPage';
 import Users from './components/user/Users';
 import { createBrowserRouter } from 'react-router-dom';
 
@@ -44,7 +44,7 @@ export const AppRoutes = createBrowserRouter([
   },
   {
     path: '/todos',
-    element: <ToDoPage />,
+    element: <TodosPage />,
   },
   {
     path: '/users',
