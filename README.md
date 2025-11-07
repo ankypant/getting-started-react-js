@@ -26,8 +26,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 #### State Management
 
-- **Reactivity in React**: Use `useState` hook for local component state and track form data changes
-- **Redux**: Global state management (to be explored)
+- **Redux**: Global state management [React Redux Tutorial](https://www.youtube.com/watch?v=5yEG6GhoJBs)
 
 ## Development
 
