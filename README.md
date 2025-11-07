@@ -12,6 +12,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 - **Data Fetching**: [Using TanStack Query (React Query)](https://www.youtube.com/watch?v=MBlZ8Wzkbi4)
 - **Forms in React**: [React Forms Tutorial](https://www.youtube.com/watch?v=falMPMOPMAk)
 - **Routing**: [React Router Tutorial](https://www.youtube.com/watch?v=oTIJunBa6MA)
+- **Redux**: [React Redux Tutorial](https://www.youtube.com/watch?v=5yEG6GhoJBs)
 
 ### Key Libraries & Resources
 
@@ -26,7 +27,8 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 #### State Management
 
-- **Redux**: Global state management [React Redux Tutorial](https://www.youtube.com/watch?v=5yEG6GhoJBs)
+- [React Redux](https://www.npmjs.com/package/react-redux)
+- [React Redux Toolkit - npm package](https://www.npmjs.com/package/@reduxjs/toolkit)
 
 ## Development
 
