@@ -14,6 +14,8 @@ This template provides a minimal setup to get React working in Vite with HMR and
 - **Routing**: [React Router Tutorial](https://www.youtube.com/watch?v=oTIJunBa6MA)
 - **Redux**: [React Redux Tutorial](https://www.youtube.com/watch?v=5yEG6GhoJBs)
 
+- **Redux-state-management-zustand**: [React Redux Zustand](https://www.youtube.com/watch?v=_ngCLZ5Iz-0)
+
 ### Key Libraries & Resources
 
 #### UI Components

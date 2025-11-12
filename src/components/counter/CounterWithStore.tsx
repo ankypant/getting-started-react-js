@@ -19,10 +19,10 @@ export const CounterWithStore = () => {
         <Button onClick={increment} variant='contained' color='primary'>
           + Increment
         </Button>
-        <Button onClick={decrement} variant='contained' color='secondary'>
+        <Button onClick={decrement} variant='contained' color='warning'>
           - Decrement
         </Button>
-        <Button onClick={reset} variant='outlined'>
+        <Button onClick={reset} variant='outlined' color='secondary'>
           Reset
         </Button>
       </div>
