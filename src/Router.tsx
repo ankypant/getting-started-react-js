@@ -1,5 +1,6 @@
 import App from './App';
 import { Counter } from './components/counter/Counter';
+import { CounterWithStore } from './components/counter/CounterWithStore';
 import FormPage from './components/forms/Forms';
 import LoginPage from './components/forms/LoginPage';
 import NotFoundPage from './components/not-found/NotFoundPage';
@@ -19,6 +20,10 @@ export const AppRoutes = createBrowserRouter([
   {
     path: '/counter',
     element: <Counter />,
+  },
+  {
+    path: '/counter-with-store',
+    element: <CounterWithStore />,
   },
   {
     path: '/forms',

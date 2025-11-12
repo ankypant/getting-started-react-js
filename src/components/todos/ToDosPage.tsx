@@ -1,28 +1,26 @@
-import type { AppDispatch, RootState } from '../../state/Store';
 import { Card, Checkbox, CircularProgress } from '@mui/material';
-import { todosFetchAsync, toggleTodo } from '../../state/todos/ToDos';
-import { useDispatch, useSelector } from 'react-redux';
 
 import { Flex } from '@backstage/ui';
 import { useEffect } from 'react';
+import { useTodosStore } from '../../store/todosStore';
 
 export const TodosPage = () => {
-  // useSelector is used to select data from the store
-  // Loads with the initial state of the store when the component is mounted
-  const toDos = useSelector((state: RootState) => state.toDos.data);
-  const status = useSelector((state: RootState) => state.toDos.status);
-  // Dispatch is used to dispatch actions to the store
-  const dispatch = useDispatch<AppDispatch>();
+  // useSelector equivalent: select data from the Zustand store
+  const toDos = useTodosStore((state) => state.data);
+  const status = useTodosStore((state) => state.status);
+  // Get actions from the Zustand store
+  const fetchTodos = useTodosStore((state) => state.fetchTodos);
+  const toggleTodo = useTodosStore((state) => state.toggleTodo);
 
   useEffect(() => {
-    // Fetch the toDos from the API using the todosFetchAsync action
-    dispatch(todosFetchAsync());
-  }, [dispatch]);
+    // Fetch the toDos from the API using the fetchTodos action
+    fetchTodos();
+  }, [fetchTodos]);
+
   // Handle the toggle of a toDo by id
   const handleToggleTodo = (id: number) => {
-    // Dispatch the toggleToDo action "toggleToDo"
-    // to the store with the id of the toDo to toggle
-    dispatch(toggleTodo(id));
+    // Call the toggleTodo action from the store
+    toggleTodo(id);
   };
 
   return (
